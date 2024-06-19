@@ -1,0 +1,23 @@
+
+.container {
+    width: 100%;
+    background-color: #edc53b;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navigate {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    max-width: 1024px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 68px;
+    object-fit: contain;
+}

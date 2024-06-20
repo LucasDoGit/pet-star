@@ -9,8 +9,9 @@ export function Header(){
     return(
         <header className={styles.container}>
             <nav className={styles.navigate}>
-                <Link to="/">
-                    <img src={logo} className={styles.logo} alt="Logo Pet Star" />
+                <Link to="/" className={styles.logo}>
+                    <img src={logo} className={styles.logo__img} alt="Logo Pet Star" />
+                    <p className={styles.logo__text}>Pet Star</p>
                 </Link>
 
                 <Link className={styles.cart} to={"/cart"}>

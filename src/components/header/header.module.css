@@ -18,6 +18,42 @@
 }
 
 .logo {
-    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px;
+}
+.logo__img {
+    height: 50px;
     object-fit: contain;
+}
+
+.logo__text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart__amount {
+    position: absolute;
+    top: -0.75rem;
+    right: -0.75rem;
+    background-color: skyblue;
+    border-radius: 100%;
+    color: white;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
 }

@@ -44,6 +44,8 @@
 
 .product__img {
     width: 112px;
+    max-width: 100%;
+    height: auto;
 }
 
 .product__amount {
@@ -65,6 +67,7 @@
     font-weight: 500;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .product_total {
@@ -76,3 +79,18 @@
     margin-top: 1.2rem;
 }
 
+
+@media screen and (max-width: 768px) {
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+        border-bottom: 2px solid #006FAA;
+    }
+    
+    .product_total {
+        margin-bottom: 1.5rem;
+    }
+}

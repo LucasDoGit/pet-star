@@ -1,10 +1,13 @@
+import { useContext } from 'react'
 import { FiShoppingCart } from 'react-icons/fi'
-import logo from '../../assets/logo.png'
-import styles from './header.module.css'
 import { Link } from 'react-router-dom'
 
+import logo from '../../assets/logo.png'
+import styles from './header.module.css'
+import { CartContext } from '../../contexts/CartContext'
+
 export function Header(){
-    const cartAmount = 1;
+    const { cartAmount } = useContext(CartContext)
 
     return(
         <header className={styles.container}>

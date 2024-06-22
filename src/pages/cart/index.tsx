@@ -1,21 +1,22 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { CartContext } from '../../contexts/CartContext';
 import { Link } from "react-router-dom";
 import styles from './cart.module.css'
-import toast from "react-hot-toast";
+import Modal from "./modal";
 
 export function Cart() {
-    const { cart, total, addItemCart, removeItemCart } = useContext(CartContext);
+    const { cart, total, addItemCart, removeItemCart, clearCart } = useContext(CartContext);
+    const [modalVisible, setModalVisible] = useState(false);
 
     function handleCheckout(){
-        toast.success("Pedido finalizado com sucesso!", {
-            style: {
-                backgroundColor: "white",
-                color: "green"
-            }
-        })
+        clearCart()
+        setModalVisible(true);
     }
+
+    const closeModal = () => {
+        setModalVisible(false);
+    };
 
     return (
         <div className={styles.container}>
@@ -70,6 +71,7 @@ export function Cart() {
                     </strong>
 
                 </section>
+
             ))}
             {cart.length !== 0 && 
                 <div className={styles.checkout}>
@@ -77,6 +79,13 @@ export function Cart() {
                     <button className={styles.btn__checkout} onClick={() => handleCheckout() }>Finalizar compra</button>
                 </div>
             }
+            <Modal show={modalVisible} onClose={closeModal}>
+                <div className={styles.modal}>
+                        <h2 className={styles.modal__title}>Obrigado pela preferência! 😊</h2>
+                        <span className={styles.modal__span}>Pedido enviado para o Pet Shop. </span>
+                        <button  className={styles.btn__checkout} onClick={() => closeModal()}>Fechar</button>
+                </div>
+            </Modal>
         </div>
     )
 }

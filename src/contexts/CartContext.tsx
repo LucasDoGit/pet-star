@@ -6,6 +6,7 @@ interface CartContextData {
     cartAmount: number;
     addItemCart: (newItem: ProductProps) => void;
     removeItemCart: (product: CartProps) => void;
+    clearCart: () => void;
     total: string;
 }
 
@@ -81,7 +82,8 @@ function CartProvider({ children }: CartProviderProps){
     }
 
     function clearCart(){
-        
+        setCart([]);
+        totalResultCart([])
     }
 
     return(
@@ -91,6 +93,7 @@ function CartProvider({ children }: CartProviderProps){
             cartAmount: cart.length,
             addItemCart,
             removeItemCart,
+            clearCart,
             total
         }}
         >

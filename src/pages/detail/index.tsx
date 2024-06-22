@@ -8,7 +8,7 @@ import { CartContext } from '../../contexts/CartContext'
 import { api } from "../../services/api";
 import styles from './detail.module.css'
 
-export function ProductDetail(){
+export function ProductDetail() {
     const { id } = useParams();
     const [loading, setLoading] = useState(true);
     const [product, setProduct] = useState<ProductProps>()
@@ -18,17 +18,17 @@ export function ProductDetail(){
 
     useEffect(() => {
         async function getProduct() {
-            
+
             await api.get(`/products/${id}`)
                 .then((res) => {
                     setProduct(res.data)
                     setLoading(false)
                 })
-                // .catch((err) => {
-                //     console.log("Erro ao tentar requisitar produto: ", err)
-                //     navigate("/")
-                //     return;
-                // })
+                .catch((err) => {
+                    console.log("Erro ao tentar requisitar produto: ", err)
+                    navigate("/")
+                    return;
+                })
         }
 
         getProduct();
@@ -55,27 +55,27 @@ export function ProductDetail(){
 
     return (
         <main className={styles.container}>
-            <section className={styles.container__product}>
-                <div className={styles.produto}>
+            <section className={styles.product_detail}>
+                <div className={styles.image_container}>
                     <img
-                        className={styles.product__foto}
+                        className={styles.image}
                         src={product?.cover}
                         alt={product?.title}
                     />
-                    <div className={styles.product__inf}>
-                        <h1 className={styles.product__title}>{product?.title}</h1>
-                        <p className={styles.product__description}>{product?.description}</p>
-                        <div className={styles.product__payment}>
-                            <strong className={styles.product__payment__price}>
-                                {product?.price.toLocaleString("pt-BR", {
-                                    style: "currency",
-                                    currency: "BRL"
-                                })}
-                            </strong>
-                            <button className={styles.product__payment__btn} onClick={() => handleAddCartItem(product)}>
-                                <BsCartPlus size={20} color="#fff" />
-                            </button>
-                        </div>
+                </div>
+                <div className={styles.information}>
+                    <h1 className={styles.information__title}>{product?.title}</h1>
+                    <p className={styles.information__description}>{product?.description}</p>
+                    <div className={styles.payment}>
+                        <strong className={styles.payment__price}>
+                            {product?.price.toLocaleString("pt-BR", {
+                                style: "currency",
+                                currency: "BRL"
+                            })}
+                        </strong>
+                        <button className={styles.payment__btn} onClick={() => handleAddCartItem(product)}>
+                            <BsCartPlus size={20} color="#fff" />
+                        </button>
                     </div>
                 </div>
             </section>

@@ -74,9 +74,29 @@
     float: right;
 }
 
-.total {
+.checkout {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout__total {
     font-weight: bold;
     margin-top: 1.2rem;
+}
+
+.btn__checkout {
+    background-color: #EDC53B;
+    margin: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
 }
 
 

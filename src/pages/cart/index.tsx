@@ -3,9 +3,19 @@ import { useContext } from "react";
 import { CartContext } from '../../contexts/CartContext';
 import { Link } from "react-router-dom";
 import styles from './cart.module.css'
+import toast from "react-hot-toast";
 
 export function Cart() {
     const { cart, total, addItemCart, removeItemCart } = useContext(CartContext);
+
+    function handleCheckout(){
+        toast.success("Pedido finalizado com sucesso!", {
+            style: {
+                backgroundColor: "white",
+                color: "green"
+            }
+        })
+    }
 
     return (
         <div className={styles.container}>
@@ -61,7 +71,12 @@ export function Cart() {
 
                 </section>
             ))}
-            {cart.length !== 0 && <p className={styles.total}>Total: {total}</p>}
+            {cart.length !== 0 && 
+                <div className={styles.checkout}>
+                    <p className={styles.checkout__total}>Total: {total}</p>
+                    <button className={styles.btn__checkout} onClick={() => handleCheckout() }>Finalizar compra</button>
+                </div>
+            }
         </div>
     )
 }

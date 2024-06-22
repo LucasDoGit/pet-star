@@ -80,6 +80,10 @@ function CartProvider({ children }: CartProviderProps){
         setTotal(resultFormated)
     }
 
+    function clearCart(){
+        
+    }
+
     return(
         <CartContext.Provider 
         value={{ 

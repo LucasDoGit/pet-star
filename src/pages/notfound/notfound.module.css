@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 768px;
+    margin: 2.5rem auto;
+}
+
+.notfound {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 48px;
+    margin-bottom: 1.25rem;
+    color: black;
+}
+
+.text {
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    font-size: 18px;
+}
+
+.btn_voltar {
+    background-color: #EDC53B;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    margin: 1rem auto;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    width: fit-content;
+}

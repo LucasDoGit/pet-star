@@ -20,7 +20,7 @@
 
 ## Introdução
 
-Projeto de um pet shop online, com foco no uso do Hook Context API. Sendo possível adicionar produtos no carrinho, alterando o estado do header a cada interação com os produtos. Este projeto foi desenvolvido para fins de estudos em React, Typescript e Responsividade.
+Projeto de um pet shop online, com foco no uso do Hook useContext. Sendo possível adicionar produtos no carrinho, alterando o estado do header a cada interação com os produtos. Este projeto foi desenvolvido para fins de estudos em React, Typescript e Responsividade.
 
 ## Tecnologias Usadas
 

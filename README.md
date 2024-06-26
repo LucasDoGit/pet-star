@@ -2,7 +2,7 @@
 
 <!-- Inserir foto de capa do projeto aqui -->
 
-![Foto de Capa](public/img/capa-projeto.png)
+![Foto de Capa](src/assets/capa-projeto.png)
 
 <!-- 1405x425 -->
 
@@ -135,12 +135,12 @@ cd pet-star
 npm install
 ```
 
-3. Está sendo utilizado uma API Fake com o json-server, hospedado na vercel "https://json-server-pet-star.vercel.app/", mas caso prefira rodar localmente basta baixar o db.json clicando [aqui](https://github.com/LucasDoGit/json-server-pet-star) e colocar na raiz do projeto, sendo então necessário rodar o comando abaixo para iniciar o json-server:
-
-4. (Opcional)
-Alterar o arquivo responsável por conectar com a API, no caminho ``src/services/api.ts``. Para rodar o json-server localmente é preciso alterar a ``baseURL`` para ``localhost:3000`` ou a que porta que o json-server esteja rodando.
+3. Está sendo utilizado uma API Fake com o json-server, hospedado na vercel "https://json-server-pet-star.vercel.app/", mas caso prefira rodar localmente basta baixar o db.json clicando [aqui](https://github.com/LucasDoGit/json-server-pet-star) e colocar na raiz do projeto, sendo então necessário iniciar o json-server localmente.
 
 ![baseurl](./src/assets/baseurl.png)
+
+4. (Opcional)
+   Alterar o arquivo responsável por conectar com a API, no caminho `src/services/api.ts`. Para rodar o json-server localmente é preciso alterar a `baseURL` para `localhost:3000` ou a que porta que o json-server esteja rodando.
 
 ```bash
 json-server --watch db.json
